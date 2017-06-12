@@ -67,8 +67,6 @@ public class SimpleLRU<K, V> implements LRU<K, V> {
 			Node<K, V> node = new Node<K, V>(key, value);
 
 			if (doublyLinkedList.getSize() == capacity) {
-				
-				System.out.println(doublyLinkedList.toString());
 				Node<K, V> lruNode = doublyLinkedList.deleteTail();
 				lru.remove(lruNode.getKey());
 			}

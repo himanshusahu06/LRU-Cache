@@ -76,7 +76,10 @@ public class SimpleDoublyLinkedList<K, V> implements DoublyLinkedList<K, V> {
 			head = head.getNext();
 			if (head != null) {
 				head.setPrev(null);
+			} else {
+				tail = head;
 			}
+			
 			delinkNode(headNode);
 		}
 	}
@@ -91,6 +94,8 @@ public class SimpleDoublyLinkedList<K, V> implements DoublyLinkedList<K, V> {
 			tail = tail.getPrev();
 			if (tail != null) {
 				tail.setNext(null);
+			} else {
+				head = tail;
 			}
 			delinkNode(node);
 		}

@@ -28,7 +28,7 @@ public class SimpleLRU<K, V> implements LRU<K, V> {
 		this.doublyLinkedList = new SimpleDoublyLinkedList<K, V>();
 	}
 
-	public V get(K key) {
+	public synchronized V get(K key) {
 		if (lru.containsKey(key)) {
 			Node<K, V> node = lru.get(key);
 			doublyLinkedList.delete(node);
@@ -38,7 +38,7 @@ public class SimpleLRU<K, V> implements LRU<K, V> {
 		return null;
 	}
 
-	public void put(K key, V value) {
+	public synchronized void put(K key, V value) {
 
 		if (lru.containsKey(key)) {
 			Node<K, V> node = lru.get(key);

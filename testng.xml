@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="LRU Regression TestSuite">
+	<test name="Application Test">
+		<classes>
+			<class name="com.inmobi.LRU.test.LRUTest_capacity_1"></class>
+			<class name="com.inmobi.LRU.test.LRUTest_capacity_2"></class>
+			<class name="com.inmobi.LRU.test.LRUTest_capacity_K"></class>
+		</classes>
+	</test>
+</suite>
